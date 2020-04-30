@@ -1,7 +1,7 @@
 import React from 'react';
 
 //  importing react router dom
-import {Route} from 'react-router-dom';
+import { Switch, Route} from 'react-router-dom';
 
 import HomePage from './pages/homepage/homepage';
 import './App.css';
@@ -18,8 +18,11 @@ class App extends React.Component {
 	render() {
 		return(
 			<div>
-				<Route exact path='/' component={HomePage} />
-				<Route path='/hats' component={HatsPage} />
+				{/* Importing react router dom */}
+				<Switch>
+					<Route exact path='/' component={HomePage} />
+					<Route path='/hats' component={HatsPage} />
+				</Switch>
 			</div>
 		)
 	};

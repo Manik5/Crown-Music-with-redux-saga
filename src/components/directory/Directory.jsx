@@ -8,41 +8,46 @@ class Directory extends React.Component {
 	constructor() {
 		super()
 		this.state = {
-			sections: [
-				 {
-					title: 'HATS',
-					imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
-					id: 1,
-					linkUrl: 'shop/hats'
-				},
-				{
-					title: 'JACKETS',
-					imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
-					id: 2,
-					linkUrl: 'shop/jackets'
-				},
-				{
-					title: 'SNEAKERS',
-					imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
-					id: 3,
-					linkUrl: 'shop/sneakers'
-				},
-				{
-					title: 'WOMENS',
-					imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
-					size: 'large',
-					id: 4,
-					linkUrl: 'shop/womens'
-				},
-				{
-					title: 'MENS',
-					imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-					size: 'large',
-					id: 5,
-					linkUrl: 'shop/mens'
-				}
-			]
-		}
+      sections: [
+        {
+          title: "DRUMS",
+          imageUrl:
+            "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+          id: 1,
+          linkUrl: "shop/hats",
+        },
+        {
+          title: "PIANO",
+          imageUrl:
+            "https://images.unsplash.com/photo-1474711850460-45057e434715?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+          id: 2,
+          linkUrl: "shop/jackets",
+        },
+        {
+          title: "BASS GUITARS",
+          imageUrl:
+            "https://images.unsplash.com/photo-1445985543470-41fba5c3144a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+          id: 3,
+          linkUrl: "shop/sneakers",
+        },
+        {
+          title: "VIOLIN",
+          imageUrl:
+            "https://images.unsplash.com/photo-1465821185615-20b3c2fbf41b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1160&q=80",
+          size: "large",
+          id: 4,
+          linkUrl: "shop/womens",
+        },
+        {
+          title: "GUITARS",
+          imageUrl:
+            "https://images.unsplash.com/photo-1543062094-d22540cadf2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+          size: "large",
+          id: 5,
+          linkUrl: "shop/mens",
+        },
+      ],
+    };
 	}
 	render () {
 		return (
