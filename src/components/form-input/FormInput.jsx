@@ -2,6 +2,7 @@ import React from 'react';
 
 import './forminput.scss';
 
+//  props passed from SignIn.jsx
 const FormInput = ({ handleChange, label, ...otherProps}) => (
 	<div className="group">
 		<input className="form-input"  onChange={ handleChange} {...otherProps}/>
