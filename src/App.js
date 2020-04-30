@@ -5,6 +5,7 @@ import { Switch, Route} from 'react-router-dom';
 
 import HomePage from './pages/homepage/homepage';
 import ShopPage from './pages/shop/Shop';
+import Header from './components/header/Header';
 
 import './App.css';
 
@@ -15,6 +16,7 @@ class App extends React.Component {
 	render() {
 		return(
 			<div>
+				<Header />
 				{/* Importing react router dom */}
 				<Switch>
 					<Route exact path='/' component={HomePage} />
