@@ -8,7 +8,7 @@ class Directory extends React.Component {
 	constructor() {
 		super()
 		this.state = {
-      sections: [
+      		sections: [
         {
           title: "DRUMS",
           imageUrl:
