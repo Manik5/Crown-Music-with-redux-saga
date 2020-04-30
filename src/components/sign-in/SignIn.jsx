@@ -11,8 +11,8 @@ class SignIn extends React.Component {
 	constructor () {
 		super()
 		this.state = {
-			name: "",
-			email: ""
+			email: "",
+			password: ""
 		}
 	}
 
@@ -47,16 +47,18 @@ class SignIn extends React.Component {
             <FormInput
               name="password"
               type="password"
-              value={this.state.email}
+              value={this.state.password}
               handleChange={this.handleChange}
               label="Password"
               required
             />
-            <CustomButton type="submit">Sign In</CustomButton>
-			<CustomButton onClick={ signInWithGoogle }>
-				{' '}
-				Sign In With Google {' '}
-			</CustomButton>
+			<div className="button">
+				<CustomButton type="submit">Sign In</CustomButton>
+				{/* Sign In with Google */}
+				<CustomButton onClick={ signInWithGoogle } isGoogleSignIn>
+					Sign In With Google
+				</CustomButton>
+			</div>
           </form>
         </div>
       </div>
