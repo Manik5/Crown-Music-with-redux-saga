@@ -2,7 +2,9 @@ import React from 'react';
 
 import './menuitem.scss';
 
+//  Deconstructuring the props
 export const MenuItem = ({ imageUrl, size, title }) => (
+
          <div className={` ${size} menu-item`}>
            <div
              className="background-image"

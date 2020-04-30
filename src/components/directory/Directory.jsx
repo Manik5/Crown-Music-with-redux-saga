@@ -48,6 +48,8 @@ class Directory extends React.Component {
 		return (
 			<div className="directory-menu">
 				{
+					//  Deconstruct the props
+					//  an use map on the sections so it will return a new array iterating over each elements in the sections state
 					this.state.sections.map(({ id,  title, imageUrl,  size }) => (
 						<MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />
 					))
@@ -59,5 +61,5 @@ class Directory extends React.Component {
 
 export default Directory;
 
-//  class components because it holds the state of the menu  items and the props of menu items
+//  It is a Class components because it holds the state of the menu  items and the props of menu items
 //  Directory will render the MenuItem,jsx
