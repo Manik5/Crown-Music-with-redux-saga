@@ -1,11 +1,22 @@
 import React from 'react';
 
+// importing react route dom
+import { withRouter } from 'react-router-dom';
+
 import './menuitem.scss';
 
 //  Deconstructuring the props
-export const MenuItem = ({ imageUrl, size, title }) => (
 
-         <div className={` ${size} menu-item`}>
+export const MenuItem = ({
+         size,
+         imageUrl,
+         title,
+         history,
+		 linkUrl,
+		//  adding match to append the url  to the linkUrl props, coming from the Directory.jsx
+         match,
+       }) => (
+         <div className={` ${size} menu-item`} onClick={() => history.push(`${match.url}${linkUrl}`)}>
            <div
              className="background-image"
              style={{
@@ -19,6 +30,6 @@ export const MenuItem = ({ imageUrl, size, title }) => (
          </div>
        );
 
-export default MenuItem;
+export default withRouter(MenuItem);
 
 //  In here it will pass all the props defined in  the Directory.jsx

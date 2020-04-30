@@ -8,9 +8,9 @@ import './App.css';
 
 //  importing react  router dom
 
-const HatsPage = () => (
+const DrumsPage = () => (
 	<div>
-		<h1>HATS PAGE</h1>
+		<h1>DRUMS</h1>
 	</div>
 );
 
@@ -21,7 +21,7 @@ class App extends React.Component {
 				{/* Importing react router dom */}
 				<Switch>
 					<Route exact path='/' component={HomePage} />
-					<Route path='/hats' component={HatsPage} />
+					<Route path='/drums' component={DrumsPage} />
 				</Switch>
 			</div>
 		)
