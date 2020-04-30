@@ -1,8 +1,8 @@
  export const ShopData = [
   {
     id: 1,
-    title: "Hats",
-    routeName: "hats",
+    title: "Drums",
+    routeName: "drums",
     items: [
       {
         id: 1,
@@ -62,8 +62,8 @@
   },
   {
     id: 2,
-    title: "Sneakers",
-    routeName: "sneakers",
+    title: "Piano",
+    routeName: "piano",
     items: [
       {
         id: 1,
@@ -117,8 +117,8 @@
   },
   {
     id: 3,
-    title: "Jackets",
-    routeName: "jackets",
+    title: "Bass Guitars",
+    routeName: "bassguitars",
     items: [
       {
         id: 1,
@@ -154,8 +154,8 @@
   },
   {
     id: 4,
-    title: "Womens",
-    routeName: "womens",
+    title: "Violins",
+    routeName: "violins",
     items: [
       {
         id: 1,
@@ -203,8 +203,8 @@
   },
   {
     id: 5,
-    title: "Mens",
-    routeName: "mens",
+    title: "Guitars",
+    routeName: "guitars",
     items: [
       {
         id: 1,

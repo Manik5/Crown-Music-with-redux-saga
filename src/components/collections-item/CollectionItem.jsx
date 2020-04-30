@@ -2,7 +2,7 @@ import React from 'react';
 
 import './collectionitem.scss';
 
- export const CollectionItem = ({ id, name, price, imageUrl }) = (
+ export const CollectionItem = ({ id, name, price, imageUrl }) => (
 	<div className="collection-item">
 		<div
 			className="image"
@@ -12,7 +12,7 @@ import './collectionitem.scss';
 		/>
 		<div className="collection-footer">
 			<span className="name">{name}</span>
-			<span className="price">{price}</span>
+			<span className="price">$ {price}</span>
 		</div>
 	</div>
 );
