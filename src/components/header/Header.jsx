@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 //  Sign Out function
 import { auth } from '../../firebase/firebase.utils';
 import CartIcon from '../cart-icon/CartIcon';
+import CartDropdown from '../cart-dropdown/CartDropdown';
 
 import  { ReactComponent as Logo } from '../../assets/music.svg';
 import './header.scss';
@@ -12,7 +13,8 @@ import './header.scss';
 //  using redux
 import { connect } from 'react-redux';
 
-export const Header = ({ currentUser }) => (
+//  with hidden, we add the function of toggling the CartIcon.jsx
+export const Header = ({ currentUser, hidden  }) => (
 	<div className="header">
 		<Link className="logo-container" to="/">
 			<Logo  className="logo"/>
@@ -37,12 +39,17 @@ export const Header = ({ currentUser }) => (
 				)}
 				<CartIcon />
 		</div>
+		{
+			//  implementing the toggle function from CartIcon.jsx
+			hidden ? null : <CartDropdown />
+		}
 	</div>
 );
 
 // using redux
-const mapStateToProps = state=> ({
-	currentUser:  state.user.currentUser
+const mapStateToProps = ({user: { currentUser}, cart: { hidden } })=> ({
+	currentUser,
+	hidden
 });
 
 //  using redux

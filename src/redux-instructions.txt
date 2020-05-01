@@ -1,0 +1,11 @@
+1. Create these 3  files ---> inside -----> src -----> redux:
+
+name.reducer.js
+- name.action.js
+-name.types.js
+
+2. First set up the reducer.js
+3. Set up the action.js
+4. Set up the types.js
+5. update the roo-reducer.js
+
