@@ -1,3 +1,5 @@
+import { userActionTypes } from './user.types';
+
 //  importing Redux
 //  importing the user state
 
@@ -10,7 +12,7 @@ const INITIAL_STATE = {
 const userReducer = (state = INITIAL_STATE,  action) =>  {
 	//  the switch check the case of the action
 	switch (action.type) {
-		case 'SET_CURRENT_USER':
+		case userActionTypes.SET_CURRENT_USER:
 			return {
 				//  spreading the state
 				...state,
