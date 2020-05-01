@@ -10,9 +10,13 @@ export const CollectionPreview = ({ title, items }) => (
 		<div className="preview">
 			{items
 				.filter((item, index) => index < 4)
-				.map(({ id, ...otherItemProps}) => (
+				//  without redux
+				// .map(({ id, ...otherItemProps}) => (
 					// props rendered fin CollectionItem.jsx
-					<CollectionItem  key={id } {...otherItemProps} />
+					// <CollectionItem  key={id} {...otherItemProps} />
+					// with redux
+					.map(( item) => (
+						<CollectionItem key={item.id} item={item} />
 			))}
 		</div>
 	</div>

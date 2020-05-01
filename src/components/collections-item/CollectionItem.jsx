@@ -1,10 +1,17 @@
 import React from 'react';
 
+//  function to add the items in the cart
+import { connect } from 'react-redux';
+import { addItem } from '../../redux/cart/cart.action';
+//  end
 import CustomButton from '../custombutton/CustomButton';
 
 import './collectionitem.scss';
 
- export const CollectionItem = ({ id, name, price, imageUrl }) => (
+//  addItem ---> function to add the items in the cart
+ export const CollectionItem = ({ item, addItem }) => {
+	const { name, price, imageUrl} = item;
+	 return (
 	<div className="collection-item">
 		<div
 			className="image"
@@ -16,8 +23,21 @@ import './collectionitem.scss';
 			<span className="name">{name}</span>
 			<span className="price">${price}</span>
 		</div>
-		<CustomButton inverted>Add to cart</CustomButton>
+		{/* onClick will trigget the event to add the items in the cart */}
+		<CustomButton onClick={() => addItem(item)} inverted>Add to cart</CustomButton>
 	</div>
-);
+)};
 
-	   export default CollectionItem;
+//  function to add items in the cart
+const mapDispatchToProps = dispatch => ({
+	addItem: item => dispatch(addItem(item))
+});
+
+//  using redux to add the function for adding items in the cart
+export default connect(
+	null,
+	mapDispatchToProps
+	)(CollectionItem);
+
+//  without react
+//  export default CollectionItem;
