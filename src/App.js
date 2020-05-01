@@ -7,21 +7,27 @@ import HomePage from './pages/homepage/homepage';
 import ShopPage from './pages/shop/Shop';
 import Header from './components/header/Header';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/SignInAndSignUp';
+
 //  Log in with Google via Firebase
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import './App.css';
 
-//  importing react  router dom
-
+//  using redux
+import { connect } from 'react-redux';
+import { setCurrentUser } from './redux/user/user.actions';
 
 class App extends React.Component {
-	constructor () {
-		super ()
-		this.state = {
-			// Log in with Google via Firebase
-			currentUser: null,
-		}
-	}
+	//  with redux, we can cancel the constructor,, because we are passing the state in the redux store.js
+
+	//  without redux
+	// constructor () {
+	// 	super ()
+	// 	this.state = {
+	// 		// Log in with Google via Firebase
+	// 		currentUser: null,
+	// 	}
+	// }
+
 	//  Log in with Google via Firebase
 	unsubscribeFromAuth = null
 
@@ -51,7 +57,10 @@ class App extends React.Component {
 	render() {
 		return(
 			<div>
-				<Header currentUser={this.state.currentUser} />
+				{/* without redux */}
+				{/* <Header currentUser={this.state.currentUser} /> */}
+				{/* with redux, because we set up the configuration in the Header.jsx */}
+				<Header />
 				{/* Importing react router dom */}
 				<Switch>
 					<Route exact path='/' component={HomePage} />
@@ -63,4 +72,14 @@ class App extends React.Component {
 	};
 }
 
-export default App;
+// using redux
+const mapDispatchToProps = dispatch => ({
+	setCurrentUser: user => dispatch(setCurrentUser(user))
+})
+
+// with redux
+export default connect(null, mapDispatchToProps )(App);
+
+
+// without redux
+// export default App;
