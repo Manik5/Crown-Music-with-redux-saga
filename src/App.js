@@ -19,11 +19,11 @@ class App extends React.Component {
 		super ()
 		this.state = {
 			// Log in with Google via Firebase
-			currentUser: ""
+			currentUser: null,
 		}
 	}
 	//  Log in with Google via Firebase
-	unsubscribeFromAuth = null;
+	unsubscribeFromAuth = null
 
 	//  Storing user in a database and in the state of the App, so we could use it
 	componentDidMount() {
