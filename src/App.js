@@ -33,20 +33,25 @@ class App extends React.Component {
 
 	//  Storing user in a database and in the state of the App, so we could use it
 	componentDidMount() {
+		const { setCurrentUser } = this.props;
+
 		this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
 			if (userAuth) {
 				const userRef = await  createUserProfileDocument(userAuth);
 
 				userRef.onSnapshot(snapShot => {
-					this.setState({
-						currentUser: {
+					// this.setState({ { without redux }
+					//  with redux
+						setCurrentUser({
 							id: snapShot.id,
 							...snapShot.data
-						}
-					});
+						})
+					// }); without redux
 				});
 			}
-				this.setState({currentUser: userAuth});
+			//  with redux
+			setCurrentUser(userAuth);
+				// setCurrentUser({currentUser: userAuth});   ----> without redux
 		});
 	}
 
@@ -59,7 +64,7 @@ class App extends React.Component {
 			<div>
 				{/* without redux */}
 				{/* <Header currentUser={this.state.currentUser} /> */}
-				{/* with redux, because we set up the configuration in the Header.jsx */}
+				{/* with redux, we can cancel "this.state" because we set up the configuration in the Header.jsx */}
 				<Header />
 				{/* Importing react router dom */}
 				<Switch>
