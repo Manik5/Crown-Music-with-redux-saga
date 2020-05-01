@@ -7,8 +7,8 @@ import HomePage from './pages/homepage/homepage';
 import ShopPage from './pages/shop/Shop';
 import Header from './components/header/Header';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/SignInAndSignUp';
-//  Saving user in Firebase
-import { auth } from './firebase/firebase.utils';
+//  Log in with Google via Firebase
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import './App.css';
 
 //  importing react  router dom
@@ -18,17 +18,31 @@ class App extends React.Component {
 	constructor () {
 		super ()
 		this.state = {
-			// Saving user in Firebase
+			// Log in with Google via Firebase
 			currentUser: ""
 		}
 	}
-	//  Saving user in Firebase
+	//  Log in with Google via Firebase
 	unsubscribeFromAuth = null;
 
+	//  Storing user in a database and in the state of the App, so we could use it
 	componentDidMount() {
-		this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-			this.setState({ currentUser: user });
-		})
+		this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+			if (userAuth) {
+				const userRef = await  createUserProfileDocument(userAuth);
+
+				userRef.onSnapshot(snapShot => {
+					this.setState({
+						currentUser: {
+							id: snapShot.id,
+							...snapShot.data
+						}
+					});
+				});
+			} else {
+				this.setState({currentUser: userAuth});
+			}
+		});
 	}
 
 	componentWillUnmount() {
