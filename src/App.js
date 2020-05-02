@@ -16,7 +16,8 @@ import './App.css';
 //  using redux
 import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
-
+import { selectCurrentUser } from './redux/user/user.selector';
+import { createStructuredSelector } from  'reselect';
 class App extends React.Component {
 	//  with redux, we can cancel the constructor,, because we are passing the state in the redux store.js
 
@@ -79,8 +80,8 @@ class App extends React.Component {
 }
 
 //  redirecting the user in the main page, after the log in
-const mapStateToProps = ({ user }) => ({
-	currentUser: user.currentUser
+const mapStateToProps = createStructuredSelector ({
+	currentUser: selectCurrentUser
 });
 
 // using redux
