@@ -1,7 +1,7 @@
 import cartActionTypes from './cart.types';
 
 //  function to add items in the cart
-import { addItemToCart } from './cart.utils';
+import { addItemToCart, removeItemFromCart } from './cart.utils';
 import { clearItemFromCart } from './cart.action';
 
 const INITIAL_STATE = {
@@ -32,6 +32,12 @@ const cartReducer = (state= INITIAL_STATE, action) => {
 					cartItem => cartItem.id !== action.payload.id
 				)
 				// end
+			}
+			// function to remove items directly from the checkout page with the arrow
+		case cartActionTypes.REMOVE_ITEM:
+			return {
+				...state,
+				cartItems: removeItemFromCart(state.cartItems, action.payload)
 			}
 		default:
 			return state;

@@ -39,7 +39,7 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
 	null,
 	mapDispatchToProps
-	)(CollectionItem);
+)(CollectionItem);
 
 //  without react
 //  export default CollectionItem;
