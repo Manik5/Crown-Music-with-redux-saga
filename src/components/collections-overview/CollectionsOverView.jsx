@@ -1,6 +1,8 @@
 import React from 'react';
 
 import   CollectionPreview   from '../collection-preview/CollectionPreview';
+
+	//  converting objects into array
 import { selectCollectionsForPreview } from "../../redux/shop/shop.selector";
 
 import './collectionoverview.scss';
@@ -19,6 +21,7 @@ const CollectionsOverview = ({ collections }) => (
 );
 
 const mapStateToProps = createStructuredSelector({
+  //  converting objects into array
   collections: selectCollectionsForPreview,
 });
 

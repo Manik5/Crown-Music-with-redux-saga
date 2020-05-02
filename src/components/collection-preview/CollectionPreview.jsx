@@ -17,7 +17,7 @@ export const CollectionPreview = ({ title, items }) => (
 					// with redux
 					.map(( item) => (
 						<CollectionItem key={item.id} item={item} />
-			))}
+				))}
 		</div>
 	</div>
 );
