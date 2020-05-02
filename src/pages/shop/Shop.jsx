@@ -1,11 +1,18 @@
 import React from 'react';
+
+import CollectionsOverView from '../../components/collections-overview/CollectionsOverView';
 // remove this after using redux
 // import ShopData from './shopdata';
-import  CollectionPreview from '../../components/collection-preview/CollectionPreview';
+//  MOVED THESE 3 INTO CollectionsOverview.jsx
+		// import  CollectionPreview from '../../components/collection-preview/CollectionPreview';
+		// import { connect } from 'react-redux';
+		// import { createStructuredSelector } from 'reselect';
+//  end
 
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
-import { selectCollections } from '../../redux/shop/shop.selector';
+//  MOVED INTO CollectionsOverView.jsx
+		// import { selectCollections } from '../../redux/shop/shop.selector';
+// end
+
 // USED BEFORE REDUX
 // class ShopPage extends React.Component {
 	// constructor () {
@@ -19,17 +26,22 @@ import { selectCollections } from '../../redux/shop/shop.selector';
 	// AFTER REDUX
 const ShopPage = ({ collections }) => (
 	<div className="shop-page">
-		{collections.map(({ id, ...otherCollectionsProps}) => (
+		<CollectionsOverView />
+		{/*  MOVED INTO CollectionsOverview.jsx */}
+		{/* {collections.map(({ id, ...otherCollectionsProps}) => (
 				<CollectionPreview key={id} {...otherCollectionsProps} />
-			))
-		}
+			))} */}
 	</div>
 );
 
-const mapStateToProps = createStructuredSelector({
-	collections: selectCollections
-});
+//  MOVED TO CollectionsOverView.jsx
+// const mapStateToProps = createStructuredSelector({
+// 	collections: selectCollections
+// });
 
-export default connect(
-	mapStateToProps
-) (ShopPage);
+export default ShopPage;
+
+//  REMOVE IT AFTER CREATED THE CollectionsOverView.jsx
+// export default connect(
+// 	mapStateToProps
+// ) (ShopPage);
