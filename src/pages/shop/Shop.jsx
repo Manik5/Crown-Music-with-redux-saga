@@ -27,7 +27,7 @@ import { Route } from 'react-router-dom';
 	// }
 
 	// AFTER REDUX
-const ShopPage = ({  match }) => (
+const ShopPage = ({ match }) => (
 	<div className="shop-page">
 		<Route exact path={`${match.path}`} component={CollectionsOverView} />
 		<Route path={`${match.path}/:collectionId`} component={CollectionPage} />

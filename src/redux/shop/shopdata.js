@@ -1,5 +1,5 @@
- export const ShopData = [
-          {
+ export const ShopData = {
+        drums:  {
             id: 1,
             title: "Drums",
             routeName: "drums",
@@ -69,7 +69,7 @@
               },
             ],
           },
-          {
+         piano: {
             id: 2,
             title: "Piano",
             routeName: "piano",
@@ -132,7 +132,7 @@
               },
             ],
           },
-          {
+          bassguitars: {
             id: 3,
             title: "Bass Guitars",
             routeName: "bassguitars",
@@ -174,7 +174,7 @@
               },
             ],
           },
-          {
+         violins: {
             id: 4,
             title: "Violins",
             routeName: "violins",
@@ -230,7 +230,7 @@
               },
             ],
           },
-          {
+         guitars: {
             id: 5,
             title: "Guitars",
             routeName: "guitars",
@@ -278,7 +278,7 @@
                 price: 25,
               },
             ],
-          },
-        ];
+        },
+ };
 
 export default ShopData;
