@@ -2,11 +2,11 @@ import React from 'react';
 
 // importing redux
 import { connect } from 'react-redux';
-import { clearItemFromCart } from '../../redux/cart/cart.action';
+import { clearItemFromCart, addItem, removeItem } from '../../redux/cart/cart.action';
 
 import './checkoutitem.scss';
 
-const CheckOutItem = ({ cartItem, clearItem }) => {
+const CheckOutItem = ({ cartItem, clearItem, addItem, removeItem }) => {
 	const { name, imageUrl, price, quantity } = cartItem;
 	return (
 	<div className="checkout-item">
@@ -15,9 +15,10 @@ const CheckOutItem = ({ cartItem, clearItem }) => {
 		</div>
 		<span className="name">{name}</span>
 		<span className="quantity">
-			<div className="arrow">&#10094;</div>
+			{/* onClick to increase or decrease the quantity */}
+			<div className="arrow" onClick={() => removeItem(cartItem)}>&#10094;</div>
 				<span className="value">{quantity}</span>
-			<div className="arrow">&#10095;</div>
+			<div className="arrow" onClick={() => addItem(cartItem)}>&#10095;</div>
 		</span>
 		<span className="price">${price}</span>
 		{/* onClick to remove items from the cart */}
@@ -30,7 +31,10 @@ const CheckOutItem = ({ cartItem, clearItem }) => {
 
 //  importing redux function and state to remove elements from the cart
 const mapDispatchToProps = dispatch => ({
-	clearItem: item => dispatch(clearItemFromCart(item))
+	clearItem: item => dispatch(clearItemFromCart(item)),
+	//  function to remove the items from the cart directly on the checkout page with the arrow
+	addItem: item => dispatch(addItem(item)),
+	removeItem: item => dispatch(removeItem(item))
 });
 
 export default connect(
