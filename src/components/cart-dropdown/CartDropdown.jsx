@@ -6,6 +6,9 @@ import { connect } from 'react-redux';
 import CustomButton from '../custombutton/CustomButton';
 import CartItem from '../cart-item/CartItem';
 
+// importing the reusable state from cart.selector.js
+import { selectCartItems } from '../../redux/cart/cart.selectors';
+
 import './cartdropdown.scss';
 
 
@@ -23,8 +26,8 @@ const CartDropdown = ({ cartItems }) => (
 
 // using redux
 
-const mapStateToProps = ({cart: { cartItems }}) => ({
-	cartItems
+const mapStateToProps = (state) => ({
+	cartItems: selectCartItems(state)
 });
 
 // with redux
