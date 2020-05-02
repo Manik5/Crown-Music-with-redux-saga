@@ -23,8 +23,10 @@ import './collectionitem.scss';
 			<span className="name">{name}</span>
 			<span className="price">${price}</span>
 		</div>
-		{/* onClick will trigget the event to add the items in the cart */}
-		<CustomButton onClick={() => addItem(item)} inverted>Add to cart</CustomButton>
+		{/* onClick will trigger the event to add the items in the cart */}
+		<CustomButton onClick={() => addItem(item)} inverted>
+			Add to cart
+		</CustomButton>
 	</div>
 )};
 

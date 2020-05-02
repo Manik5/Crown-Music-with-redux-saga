@@ -70,53 +70,53 @@
             routeName: "piano",
             items: [
               {
-                id: 1,
+                id: 10,
                 name: "Yamaha",
                 imageUrl:
                   "https://images.unsplash.com/photo-1552422535-c45813c61732?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
                 price: 220,
               },
               {
-                id: 2,
+                id: 11,
                 name: "Fazioli",
                 imageUrl:
                   "https://images.unsplash.com/photo-1575450311950-5b4f69962b47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
                 price: 280,
               },
               {
-                id: 3,
+                id: 12,
                 name: "Steinway & Sons",
                 imageUrl:
                   "https://images.unsplash.com/photo-1531712967688-cbc82b2b4ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
                 price: 110,
               },
               {
-                id: 4,
+                id: 13,
                 name: "M-Audio Keyboards",
                 imageUrl:
                   "https://images.unsplash.com/photo-1552056891-ad717260b047?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
                 price: 160,
               },
               {
-                id: 5,
+                id: 14,
                 name: "Nike Red High Tops",
                 imageUrl: "https://i.ibb.co/QcvzydB/nikes-red.png",
                 price: 160,
               },
               {
-                id: 6,
+                id: 15,
                 name: "Nike Brown High Tops",
                 imageUrl: "https://i.ibb.co/fMTV342/nike-brown.png",
                 price: 160,
               },
               {
-                id: 7,
+                id: 16,
                 name: "Air Jordan Limited",
                 imageUrl: "https://i.ibb.co/w4k6Ws9/nike-funky.png",
                 price: 190,
               },
               {
-                id: 8,
+                id: 17,
                 name: "Timberlands",
                 imageUrl: "https://i.ibb.co/Mhh6wBg/timberlands.png",
                 price: 200,
@@ -129,35 +129,35 @@
             routeName: "bassguitars",
             items: [
               {
-                id: 1,
+                id: 18,
                 name: "Warwick",
                 imageUrl:
                   "https://images.unsplash.com/photo-1585729774457-badd10ddb217?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
                 price: 125,
               },
               {
-                id: 2,
+                id: 19,
                 name: "Spector",
                 imageUrl:
                   "https://images.unsplash.com/photo-1550590774-adc439e48ac6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
                 price: 90,
               },
               {
-                id: 3,
+                id: 20,
                 name: "Rickenbacker",
                 imageUrl:
                   "https://images.unsplash.com/photo-1542749777-8ec3d91d1484?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
                 price: 90,
               },
               {
-                id: 4,
+                id: 21,
                 name: "Ibanez",
                 imageUrl:
                   "https://images.unsplash.com/photo-1583764294966-418b59bc834f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
                 price: 165,
               },
               {
-                id: 5,
+                id: 22,
                 name: "Tan Trench",
                 imageUrl: "https://i.ibb.co/M6hHc3F/brown-trench.png",
                 price: 185,
@@ -170,47 +170,47 @@
             routeName: "violins",
             items: [
               {
-                id: 1,
+                id: 23,
                 name: "Stentor",
                 imageUrl:
                   "https://images.unsplash.com/photo-1558556405-3071bd8d3ee6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
                 price: 25,
               },
               {
-                id: 2,
+                id: 24,
                 name: "Kennedy",
                 imageUrl:
                   "https://images.unsplash.com/photo-1564528183203-ec84690e06a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
                 price: 20,
               },
               {
-                id: 3,
+                id: 25,
                 name: "Mendini",
                 imageUrl:
                   "https://images.unsplash.com/photo-1528032947483-4e1df543253a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
                 price: 80,
               },
               {
-                id: 4,
+                id: 26,
                 name: "Eastman",
                 imageUrl:
                   "https://images.unsplash.com/photo-1496369654500-4f0caba0ecfa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
                 price: 80,
               },
               {
-                id: 5,
+                id: 27,
                 name: "Striped Sweater",
                 imageUrl: "https://i.ibb.co/KmSkMbH/striped-sweater.png",
                 price: 45,
               },
               {
-                id: 6,
+                id: 28,
                 name: "Yellow Track Suit",
                 imageUrl: "https://i.ibb.co/v1cvwNf/yellow-track-suit.png",
                 price: 135,
               },
               {
-                id: 7,
+                id: 29,
                 name: "White Blouse",
                 imageUrl: "https://i.ibb.co/qBcrsJg/white-vest.png",
                 price: 20,
@@ -223,41 +223,41 @@
             routeName: "guitars",
             items: [
               {
-                id: 1,
+                id: 30,
                 name: "Gibson",
                 imageUrl:
                   "https://images.unsplash.com/photo-1516924962500-2b4b3b99ea02?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
                 price: 325,
               },
               {
-                id: 2,
+                id: 31,
                 name: "Fender",
                 imageUrl:
                   "https://images.unsplash.com/photo-1540281772389-9c107ba8c7c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=625&q=80",
                 price: 20,
               },
               {
-                id: 3,
+                id: 32,
                 name: "Stratocaster",
                 imageUrl:
                   "https://images.unsplash.com/photo-1550985616-10810253b84d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
                 price: 25,
               },
               {
-                id: 4,
+                id: 33,
                 name: "Les Paul",
                 imageUrl:
                   "https://images.unsplash.com/photo-1539593758884-2e9d7b18e451?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
                 price: 25,
               },
               {
-                id: 5,
+                id: 34,
                 name: "Jean Long Sleeve",
                 imageUrl: "https://i.ibb.co/VpW4x5t/roll-up-jean-shirt.png",
                 price: 40,
               },
               {
-                id: 6,
+                id: 35,
                 name: "Burgundy T-shirt",
                 imageUrl: "https://i.ibb.co/mh3VM1f/polka-dot-shirt.png",
                 price: 25,
