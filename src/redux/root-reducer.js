@@ -13,6 +13,8 @@ import cartReducer from './cart/cart.reducer';
 
 // storing all the directory data in a reducer
 import directoryReducer from './directory/directory.reducer';
+// end
+import shopReducer from './shop/shop.reducer';
 
 // importing redux persist
 const persistConfig = {
@@ -25,7 +27,8 @@ const rootReducer = combineReducers({
 	user: userReducer,
 	cart: cartReducer,
 	directory: directoryReducer,
-})
+	shop: shopReducer
+});
 
 export default persistReducer(persistConfig, rootReducer)
 
