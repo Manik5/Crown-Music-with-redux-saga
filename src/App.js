@@ -1,23 +1,25 @@
 import React from 'react';
+import './App.css';
 
 //  importing react router dom, and with "Redirect" we will send the user into the main page after the log in
 import { Switch, Route, Redirect } from 'react-router-dom';
 
+import Header from './components/header/Header';
 
 import HomePage from './pages/homepage/homepage';
 import ShopPage from './pages/shop/Shop';
-import Header from './components/header/Header';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/SignInAndSignUp';
+import CheckOutPage from './pages/checkout/CheckOut';
 
 //  Log in with Google via Firebase
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
-import './App.css';
 
 //  using redux
 import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selector';
 import { createStructuredSelector } from  'reselect';
+
 class App extends React.Component {
 	//  with redux, we can cancel the constructor,, because we are passing the state in the redux store.js
 
@@ -72,7 +74,15 @@ class App extends React.Component {
 				<Switch>
 					<Route exact path='/' component={HomePage} />
 					<Route path='/shop' component={ShopPage} />
-					<Route exact path='/signin'  render={() => this.props.currentUser ? (<Redirect to="/" />) : (<SignInAndSignUpPage />)} />
+					<Route exact path='/checkout' component={CheckOutPage} />
+					<Route
+						exact
+						path='/signin'
+						render={() =>
+						this.props.currentUser ? (
+							<Redirect to="/" />
+							) : (
+							<SignInAndSignUpPage />)} />
 				</Switch>
 			</div>
 		)
