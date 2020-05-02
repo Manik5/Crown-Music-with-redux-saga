@@ -8,6 +8,8 @@ import { toggleCartHidden } from '../../redux/cart/cart.action';
 //  importing reusable cart state from cart.selector.,js
 import { selectCartItemsCount } from '../../redux/cart/cart.selectors';
 
+import { createStructuredSelector } from 'reselect';
+
 import './carticon.scss';
 
 
@@ -25,8 +27,8 @@ const mapDispatchToProps = dispatch => ({
 
 
 //  updating the number of the elements added in the icon
-const mapStateToProps = state => ({
-	itemCount: selectCartItemsCount(state)
+const mapStateToProps = createStructuredSelector ({
+	itemCount: selectCartItemsCount
 });
 
 
