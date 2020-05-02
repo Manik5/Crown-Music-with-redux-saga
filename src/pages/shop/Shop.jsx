@@ -1,6 +1,9 @@
 import React from 'react';
 
 import CollectionsOverView from '../../components/collections-overview/CollectionsOverView';
+import CollectionPage from '../collection/Collection';
+//  importing rout
+import { Route } from 'react-router-dom';
 // remove this after using redux
 // import ShopData from './shopdata';
 //  MOVED THESE 3 INTO CollectionsOverview.jsx
@@ -24,9 +27,10 @@ import CollectionsOverView from '../../components/collections-overview/Collectio
 	// }
 
 	// AFTER REDUX
-const ShopPage = ({ collections }) => (
+const ShopPage = ({  match }) => (
 	<div className="shop-page">
-		<CollectionsOverView />
+		<Route exact path={`${match.path}`} component={CollectionsOverView} />
+		<Route path={`${match.path}/:collectionId`} component={CollectionPage} />
 		{/*  MOVED INTO CollectionsOverview.jsx */}
 		{/* {collections.map(({ id, ...otherCollectionsProps}) => (
 				<CollectionPreview key={id} {...otherCollectionsProps} />
