@@ -11,13 +11,15 @@ export const selectCollections = createSelector(
 	//  converting objects into array
 	export const selectCollectionsForPreview = createSelector(
 		[selectCollections],
-		collections => Object.keys(collections).map(key => collections[key])
+		collections => collections ?  Object.keys(collections).map(key => collections[key])
+		:
+		[]
 	);
 
 	//  defining the route for each category
 	export const selectCollection = collectionUrlParam =>
 		createSelector(
 			[selectCollections],
-			collections => collections[collectionUrlParam]
+			collections => (collections ? collections[collectionUrlParam] : null)
 	);
 

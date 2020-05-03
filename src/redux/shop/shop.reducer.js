@@ -1,9 +1,16 @@
-import ShopData from './shopdata';
+
+
+//  COMMENTED THIS BECAUSE WE STORED THESE DATA IN FIREBASE
+// import ShopData from './shopdata';
+
 import ShopActionTypes from './shop.types';
 
+//  the INITIAL_STATE, BEFORE STORING THE DATA IN FIREBASE WAS ---> ShopData
+
 const INITIAL_STATE = {
-	collections: ShopData
+	collections: null
 };
+
 
 const shopReducer = (state = INITIAL_STATE, action) => {
 	switch (action.type) {
