@@ -1,5 +1,5 @@
 //  High Order function
-
+//  loading function
 
 import React from 'react';
 
