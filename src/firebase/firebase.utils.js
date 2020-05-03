@@ -67,8 +67,13 @@ export const convertCollectionsSnapshotToMap = (collections)  => {
 			items
 		}
 	});
-	console.log(transformedCollection);
-}
+
+	//  fetching the data stored in firebase
+	return transformedCollection.reduce( (accumulator, collection) =>  {
+		accumulator[collection.title.toLowerCase()] = collection;
+		return accumulator;
+	}, {});
+};
 
   export const auth = firebase.auth();
   export const firestore = firebase.firestore();

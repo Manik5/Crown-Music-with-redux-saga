@@ -5,7 +5,12 @@ import CollectionPage from '../collection/Collection';
 //  importing rout
 import { Route } from 'react-router-dom';
 
+// importing redux
+import {connect} from 'react-redux';
+
 import { firestore, convertCollectionsSnapshotToMap } from '../../firebase/firebase.utils';
+
+import { updateCollections } from '../../redux/shop/shop.action';
 
 // remove this after using redux
 // import ShopData from './shopdata';
@@ -33,10 +38,12 @@ import { firestore, convertCollectionsSnapshotToMap } from '../../firebase/fireb
 class ShopPage extends React.Component {
 	unsubscribeFromSnapshot = null;
 
+	// fetching the data stored  in firebase
 	componentDidMount() {
 		const collectionRef = firestore.collection("collections");
-		collectionRef.onSnapshot(async snapshot => {
-			convertCollectionsSnapshotToMap(snapshot)
+		this.unsubscribeFromSnapshot = collectionRef.onSnapshot(async snapshot => {
+			const collectionsMap = convertCollectionsSnapshotToMap(snapshot)
+			console.log(collectionsMap)
 		});
 	}
 
@@ -55,13 +62,17 @@ class ShopPage extends React.Component {
 	}
 }
 
+const mapDispatchToProps = dispatch => ({
+	updateCollections: collectionsMap => dispatch(updateCollections(collectionsMap))
+})
+
 
 //  MOVED TO CollectionsOverView.jsx
 // const mapStateToProps = createStructuredSelector({
 // 	collections: selectCollections
 // });
 
-export default ShopPage;
+export default connect(mapDispatchToProps) (ShopPage);
 
 //  REMOVE IT AFTER CREATED THE CollectionsOverView.jsx
 // export default connect(
