@@ -70,17 +70,17 @@ class ShopPage extends React.Component {
 				<Route
 					exact path={`${match.path}`}
 					//  loading function
-					render={(props) =>
-					<CollectionsOverviewWithSpinner
-					isLoading={loading} {...props} />}
-					component={CollectionsOverView} />
+					render={(props =>
+						<CollectionsOverviewWithSpinner isLoading={loading} {...props} />
+					)}
+					/>
 				<Route
 					path={`${match.path}/:collectionId`}
 					// loading function
-					render={(props) =>
-					<CollectionPageWithSpinner
-					isLoading={loading} {...props} />}
-					component={CollectionPage} />
+					render={(props =>
+						<CollectionPageWithSpinner isLoading={loading} {...props} />
+					)}
+				/>
 				{/*  MOVED INTO CollectionsOverview.jsx */}
 				{/* {collections.map(({ id, ...otherCollectionsProps}) => (
 						<CollectionPreview key={id} {...otherCollectionsProps} />
