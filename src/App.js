@@ -11,14 +11,21 @@ import ShopPage from './pages/shop/Shop';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/SignInAndSignUp';
 import CheckOutPage from './pages/checkout/CheckOut';
 
-//  Log in with Google via Firebase
+//  Log in with Google via Firebase and store the hard coded data in firebase
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+
+// added temporary to store the hard coded data in firebase
+// addCollectionAndDocuments;
+
 
 //  using redux
 import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selector';
 import { createStructuredSelector } from  'reselect';
+
+// added temporary to store the hard coded data in firebase
+// import { selectCollectionsForPreview } from './redux/shop/shop.selector'
 
 class App extends React.Component {
 	//  with redux, we can cancel the constructor,, because we are passing the state in the redux store.js
@@ -38,6 +45,8 @@ class App extends React.Component {
 	//  Storing user in a database and in the state of the App, so we could use it
 	componentDidMount() {
 		const { setCurrentUser } = this.props;
+		//  temporary defined to store the hard coded data in firebase
+		//  collectionsArray;
 
 		this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
 			if (userAuth) {
@@ -56,6 +65,9 @@ class App extends React.Component {
 			//  with redux
 			setCurrentUser(userAuth);
 				// setCurrentUser({currentUser: userAuth});   ----> without redux
+
+				// // added temporary to store the hard coded data in firebase
+			// addCollectionAndDocuments('collections', collectionsArray.map(({title, items}) =>({ title, items}) ))
 		});
 	}
 
@@ -91,7 +103,9 @@ class App extends React.Component {
 
 //  redirecting the user in the main page, after the log in
 const mapStateToProps = createStructuredSelector ({
-	currentUser: selectCurrentUser
+	currentUser: selectCurrentUser,
+	// storing the hard coded data in firebase
+	// collectionsArray: selectCollectionsForPreview
 });
 
 // using redux
