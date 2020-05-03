@@ -40,10 +40,12 @@ class ShopPage extends React.Component {
 
 	// fetching the data stored  in firebase
 	componentDidMount() {
+		const { updateCollections } = this.props
 		const collectionRef = firestore.collection("collections");
+
 		this.unsubscribeFromSnapshot = collectionRef.onSnapshot(async snapshot => {
 			const collectionsMap = convertCollectionsSnapshotToMap(snapshot)
-			console.log(collectionsMap)
+			updateCollections(collectionsMap);
 		});
 	}
 
@@ -72,7 +74,9 @@ const mapDispatchToProps = dispatch => ({
 // 	collections: selectCollections
 // });
 
-export default connect(mapDispatchToProps) (ShopPage);
+export default connect(
+	 null, mapDispatchToProps
+) (ShopPage);
 
 //  REMOVE IT AFTER CREATED THE CollectionsOverView.jsx
 // export default connect(
