@@ -41,6 +41,7 @@ const config =
 
   firebase.initializeApp(config);
 
+  //   storing the hard coded data in firebase
   export const addCollectionAndDocuments = async (collectionKey, objectsToAdd ) => {
 	  const collectionRef = firestore.collection(collectionKey);
 
@@ -52,6 +53,7 @@ const config =
 
 	 return await batch.commit()
   };
+//   end
 
   export const auth = firebase.auth();
   export const firestore = firebase.firestore();

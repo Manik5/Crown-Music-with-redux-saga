@@ -11,7 +11,7 @@ import ShopPage from './pages/shop/Shop';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/SignInAndSignUp';
 import CheckOutPage from './pages/checkout/CheckOut';
 
-//  Log in with Google via Firebase and store the hard coded data in firebase
+//  Log in with Google via Firebase
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 // added temporary to store the hard coded data in firebase
