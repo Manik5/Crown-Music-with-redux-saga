@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
-
 import { createStructuredSelector } from 'reselect';
 //  Sign Out function
 import { auth } from '../../firebase/firebase.utils';
@@ -18,7 +16,7 @@ import './header.scss';
 import { connect } from 'react-redux';
 
 // importing styled library
-import { HeaderContainer, LogoContainer, OptionContainer, OptionLink, OptionDiv} from './header.styles';
+import { HeaderContainer, LogoContainer, OptionContainer, OptionLink } from './header.styles';
 
 //  with hidden, we add the function of toggling the CartIcon.jsx
 export const Header = ({ currentUser, hidden  }) => (
@@ -27,22 +25,14 @@ export const Header = ({ currentUser, hidden  }) => (
 			<Logo  className="logo"/>
 		</LogoContainer>
 		<OptionContainer>
-			<OptionLink to="/shop" >
-				SHOP
-			</OptionLink>
-			<OptionLink to="/contact" >
-				CONTACT
-			</OptionLink>
+			<OptionLink to="/shop" >SHOP</OptionLink>
+			<OptionLink to="/contact" >CONTACT</OptionLink>
 			{/* Sign Out function */}
 			{
 				currentUser ? (
-				<OptionDiv  onClick={() => auth.signOut()}>
-					SIGN OUT
-				</OptionDiv>
+				<OptionLink as="div"  onClick={() => auth.signOut()}>SIGN OUT</OptionLink>
 				) : (
-				<OptionLink to='/signin'>
-					SIGN IN
-				</OptionLink>
+				<OptionLink to='/signin'>SIGN IN</OptionLink>
 				)}
 				<CartIcon />
 		</OptionContainer>
