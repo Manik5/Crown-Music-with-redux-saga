@@ -18,6 +18,8 @@ const CustomButton = ({ children,  isGoogleSignIn, inverted, ...otherProps }) =>
 	</button>
 );
 
+//  with styled components and not css
+
 // const CustomButton = ({ children, ...props }) => (
 //   <CustomButtonContainer {...props}>{children}</CustomButtonContainer>
 // );
