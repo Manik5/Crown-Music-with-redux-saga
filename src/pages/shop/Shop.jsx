@@ -47,10 +47,7 @@ class ShopPage extends React.Component {
 	state = {
 		loading: true
 	};
-
-
 	unsubscribeFromSnapshot = null;
-
 	// fetching the data stored  in firebase
 	componentDidMount() {
 		const { updateCollections } = this.props
@@ -60,7 +57,7 @@ class ShopPage extends React.Component {
 			const collectionsMap = convertCollectionsSnapshotToMap(snapshot)
 			updateCollections(collectionsMap);
 			// loading function
-			this.state({ loading: false });
+			this.setState({ loading: false });
 		});
 	}
 
@@ -77,7 +74,13 @@ class ShopPage extends React.Component {
 					<CollectionsOverviewWithSpinner
 					isLoading={loading} {...props} />}
 					component={CollectionsOverView} />
-				<Route path={`${match.path}/:collectionId`} component={CollectionPage} />
+				<Route
+					path={`${match.path}/:collectionId`}
+					// loading function
+					render={(props) =>
+					<CollectionPageWithSpinner
+					isLoading={loading} {...props} />}
+					component={CollectionPage} />
 				{/*  MOVED INTO CollectionsOverview.jsx */}
 				{/* {collections.map(({ id, ...otherCollectionsProps}) => (
 						<CollectionPreview key={id} {...otherCollectionsProps} />
