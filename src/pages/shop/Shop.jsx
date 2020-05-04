@@ -53,14 +53,21 @@ class ShopPage extends React.Component {
 		const { updateCollections } = this.props
 		const collectionRef = firestore.collection("collections");
 
-		this.unsubscribeFromSnapshot = collectionRef.onSnapshot(async snapshot => {
+		//  fetching data from Api  in firebase
+	// 	fetch("https://firestore.googleapis.com/v1/projects/music - db - de7c6/databases/(default)/documents/collections")
+	// 	.then(response => response.json())
+	// 	.then(collections => console.log(collections))
+	// }
+
+		collectionRef.get().then(snapshot => {
 			const collectionsMap = convertCollectionsSnapshotToMap(snapshot)
 			updateCollections(collectionsMap);
 			// loading function
 			this.setState({ loading: false });
 		});
-	}
-
+}
+		// this.unsubscribeFromSnapshot = collectionRef.onSnapshot(async snapshot => {
+		// })
 	render() {
 		const { match} = this.props;
 		// loading function
@@ -108,3 +115,7 @@ export default connect(
 // export default connect(
 // 	mapStateToProps
 // ) (ShopPage);
+
+
+
+
